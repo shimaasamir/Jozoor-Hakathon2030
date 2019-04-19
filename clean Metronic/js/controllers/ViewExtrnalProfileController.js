@@ -9,8 +9,5 @@ angular.module('JozoorApp').controller('ViewProfileController', function($rootSc
     $rootScope.settings.layout.pageBodySolid = false;
     $rootScope.settings.layout.pageSidebarClosed = false;
 
-
-    $scope.redirectToExternalProfile = function(){
-        $state.go('viewExtrnalProfile');
-    }
+    
 });

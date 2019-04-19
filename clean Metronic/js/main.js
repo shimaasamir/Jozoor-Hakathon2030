@@ -170,6 +170,28 @@ JozoorApp.config([
         }
       })
 
+      // ViewProfile
+      .state("viewExtrnalProfile", {
+        url: "/viewExtrnalProfile.html",
+        templateUrl: "views/viewExtrnalProfile.html",
+        data: { pageTitle: "Extrnal ViewProfile Template" },
+        controller: "ViewExtrnalProfileController",
+        resolve: {
+          deps: [
+            "$ocLazyLoad",
+            function($ocLazyLoad) {
+              return $ocLazyLoad.load({
+                name: "JozoorApp",
+                insertBefore: "#ng_load_plugins_before", // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                files: [
+                  "js/controllers/ViewExtrnalProfileController.js"
+                ]
+              });
+            }
+          ]
+        }
+      })
+
       // Blank Page
       .state("blank", {
         url: "/blank",
