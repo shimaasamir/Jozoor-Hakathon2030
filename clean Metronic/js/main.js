@@ -80,7 +80,6 @@ JozoorApp.controller("HeaderController", [
   "$scope",
   function($scope) {
     $scope.$on("$includeContentLoaded", function() {
-      Layout.initHeader(); // init header
     });
   }
 ]);
@@ -91,7 +90,6 @@ JozoorApp.controller("SidebarController", [
   "$scope",
   function($state, $scope) {
     $scope.$on("$includeContentLoaded", function() {
-      Layout.initSidebar($state); // init sidebar
     });
   }
 ]);
@@ -133,7 +131,6 @@ JozoorApp.controller("FooterController", [
   "$scope",
   function($scope) {
     $scope.$on("$includeContentLoaded", function() {
-      Layout.initFooter(); // init footer
     });
   }
 ]);

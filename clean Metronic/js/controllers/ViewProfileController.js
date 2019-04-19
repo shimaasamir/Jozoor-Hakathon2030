@@ -1,7 +1,6 @@
 angular.module('JozoorApp').controller('ViewProfileController', function($rootScope, $scope, $http, $timeout) {
     $scope.$on('$viewContentLoaded', function() {   
         // initialize core components
-        App.initAjax();
     });
 
     // set sidebar closed and body solid layout mode
