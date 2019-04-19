@@ -1,7 +1,9 @@
-body.profile {
-  background: url("../img/cultivation-farm-farming-1213859 (1).png") no-repeat;
-  background-position: center 310%;
-  background-attachment: fixed; }
+body {
+  padding-bottom: 120px; }
+  body.profile {
+    background: url("../img/cultivation-farm-farming-1213859 (1).png") no-repeat;
+    background-position: center 310%;
+    background-attachment: fixed; }
 
 header {
   display: flex;
