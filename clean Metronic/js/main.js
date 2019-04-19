@@ -3,7 +3,7 @@ Metronic AngularJS App Main Script
 ***/
 
 /* Metronic App */
-var MetronicApp = angular.module("MetronicApp", [
+var JozoorApp = angular.module("JozoorApp", [
   "ui.router",
   "ui.bootstrap",
   "oc.lazyLoad",
@@ -11,7 +11,7 @@ var MetronicApp = angular.module("MetronicApp", [
 ]);
 
 /* Configure ocLazyLoader(refer: https://github.com/ocombe/ocLazyLoad) */
-MetronicApp.config([
+JozoorApp.config([
   "$ocLazyLoadProvider",
   function($ocLazyLoadProvider) {
     $ocLazyLoadProvider.config({
@@ -21,7 +21,7 @@ MetronicApp.config([
 ]);
 
 //AngularJS v1.3.x workaround for old style controller declarition in HTML
-MetronicApp.config([
+JozoorApp.config([
   "$controllerProvider",
   function($controllerProvider) {
     // this option might be handy for migrating old apps, but please don't use it
@@ -35,7 +35,7 @@ MetronicApp.config([
 *********************************************/
 
 /* Setup global settings */
-MetronicApp.factory("settings", [
+JozoorApp.factory("settings", [
   "$rootScope",
   function($rootScope) {
     // supported languages
@@ -58,7 +58,7 @@ MetronicApp.factory("settings", [
 ]);
 
 /* Setup App Main Controller */
-MetronicApp.controller("AppController", [
+JozoorApp.controller("AppController", [
   "$scope",
   "$rootScope",
   function($scope, $rootScope) {
@@ -76,7 +76,7 @@ initialization can be disabled and Layout.init() should be called on page load c
 ***/
 
 /* Setup Layout Part - Header */
-MetronicApp.controller("HeaderController", [
+JozoorApp.controller("HeaderController", [
   "$scope",
   function($scope) {
     $scope.$on("$includeContentLoaded", function() {
@@ -86,7 +86,7 @@ MetronicApp.controller("HeaderController", [
 ]);
 
 /* Setup Layout Part - Sidebar */
-MetronicApp.controller("SidebarController", [
+JozoorApp.controller("SidebarController", [
   "$state",
   "$scope",
   function($state, $scope) {
@@ -97,7 +97,7 @@ MetronicApp.controller("SidebarController", [
 ]);
 
 /* Setup Layout Part - Sidebar */
-MetronicApp.controller("PageHeadController", [
+JozoorApp.controller("PageHeadController", [
   "$scope",
   function($scope) {
     $scope.$on("$includeContentLoaded", function() {
@@ -107,7 +107,7 @@ MetronicApp.controller("PageHeadController", [
 ]);
 
 /* Setup Layout Part - Quick Sidebar */
-MetronicApp.controller("QuickSidebarController", [
+JozoorApp.controller("QuickSidebarController", [
   "$scope",
   function($scope) {
     $scope.$on("$includeContentLoaded", function() {
@@ -119,7 +119,7 @@ MetronicApp.controller("QuickSidebarController", [
 ]);
 
 /* Setup Layout Part - Theme Panel */
-MetronicApp.controller("ThemePanelController", [
+JozoorApp.controller("ThemePanelController", [
   "$scope",
   function($scope) {
     $scope.$on("$includeContentLoaded", function() {
@@ -129,7 +129,7 @@ MetronicApp.controller("ThemePanelController", [
 ]);
 
 /* Setup Layout Part - Footer */
-MetronicApp.controller("FooterController", [
+JozoorApp.controller("FooterController", [
   "$scope",
   function($scope) {
     $scope.$on("$includeContentLoaded", function() {
@@ -139,31 +139,30 @@ MetronicApp.controller("FooterController", [
 ]);
 
 /* Setup Rounting For All Pages */
-MetronicApp.config([
+JozoorApp.config([
   "$stateProvider",
   "$urlRouterProvider",
   function($stateProvider, $urlRouterProvider) {
     // Redirect any unmatched url
-    $urlRouterProvider.otherwise("/dashboard.html");
+    $urlRouterProvider.otherwise("/viewProfile.html");
 
     $stateProvider
 
-      // Dashboard
-      .state("dashboard", {
-        url: "/dashboard.html",
-        templateUrl: "views/dashboard.html",
-        data: { pageTitle: "Admin Dashboard Template" },
-        controller: "DashboardController",
+      // ViewProfile
+      .state("viewProfile", {
+        url: "/viewProfile.html",
+        templateUrl: "views/viewProfile.html",
+        data: { pageTitle: "Admin ViewProfile Template" },
+        controller: "ViewProfileController",
         resolve: {
           deps: [
             "$ocLazyLoad",
             function($ocLazyLoad) {
               return $ocLazyLoad.load({
-                name: "MetronicApp",
+                name: "JozoorApp",
                 insertBefore: "#ng_load_plugins_before", // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
                 files: [
-                  "assets/pages/scripts/dashboard.js",
-                  "js/controllers/DashboardController.js"
+                  "js/controllers/ViewProfileController.js"
                 ]
               });
             }
@@ -182,7 +181,7 @@ MetronicApp.config([
             "$ocLazyLoad",
             function($ocLazyLoad) {
               return $ocLazyLoad.load({
-                name: "MetronicApp",
+                name: "JozoorApp",
                 insertBefore: "#ng_load_plugins_before", // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
                 files: ["js/controllers/BlankController.js"]
               });
@@ -194,7 +193,7 @@ MetronicApp.config([
 ]);
 
 /* Init global settings and run the app */
-MetronicApp.run([
+JozoorApp.run([
   "$rootScope",
   "settings",
   "$state",
