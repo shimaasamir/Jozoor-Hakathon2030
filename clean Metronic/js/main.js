@@ -80,7 +80,6 @@ JozoorApp.controller("HeaderController", [
   "$scope",
   function($scope) {
     $scope.$on("$includeContentLoaded", function() {
-      Layout.initHeader(); // init header
     });
   }
 ]);
@@ -91,7 +90,6 @@ JozoorApp.controller("SidebarController", [
   "$scope",
   function($state, $scope) {
     $scope.$on("$includeContentLoaded", function() {
-      Layout.initSidebar($state); // init sidebar
     });
   }
 ]);
@@ -133,7 +131,6 @@ JozoorApp.controller("FooterController", [
   "$scope",
   function($scope) {
     $scope.$on("$includeContentLoaded", function() {
-      Layout.initFooter(); // init footer
     });
   }
 ]);
@@ -163,6 +160,28 @@ JozoorApp.config([
                 insertBefore: "#ng_load_plugins_before", // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
                 files: [
                   "js/controllers/ViewProfileController.js"
+                ]
+              });
+            }
+          ]
+        }
+      })
+
+      // ViewProfile
+      .state("viewExtrnalProfile", {
+        url: "/viewExtrnalProfile.html",
+        templateUrl: "views/viewExtrnalProfile.html",
+        data: { pageTitle: "Extrnal ViewProfile Template" },
+        controller: "ViewExtrnalProfileController",
+        resolve: {
+          deps: [
+            "$ocLazyLoad",
+            function($ocLazyLoad) {
+              return $ocLazyLoad.load({
+                name: "JozoorApp",
+                insertBefore: "#ng_load_plugins_before", // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                files: [
+                  "js/controllers/ViewExtrnalProfileController.js"
                 ]
               });
             }
