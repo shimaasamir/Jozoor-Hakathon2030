@@ -2,10 +2,14 @@ body {
   padding-bottom: 120px; }
   body.profile {
     background: url("../img/cultivation-farm-farming-1213859 (1).png") no-repeat;
-    background-position: center 310%;
-    background-attachment: fixed; }
+    background-position: center 310%; }
+  body.newsFeed {
+    background: url("../img/BG.png") no-repeat;
+    background-position: center top -45px; }
+    body.newsFeed header {
+      margin-bottom: 20px; }
 
-header {
+header.main {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,18 +17,45 @@ header {
   margin-bottom: 80px;
   position: sticky;
   top: 0; }
-  header .searchForm {
+  header.main .searchForm {
     width: calc(100% - 60px);
     margin-left: auto; }
-    header .searchForm input {
+    header.main .searchForm input {
       background: transparent;
       border: none;
       border-bottom: 1px solid #fff;
       background: url("../img/search (1).svg") no-repeat center right;
       color: #f7f7f7;
       width: 100%; }
-      header .searchForm input:focus {
+      header.main .searchForm input:focus {
         outline: none; }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(../img/footer.svg) no-repeat center;
+  background-size: 107%;
+  display: flex;
+  align-items: flex-end; }
+  footer div {
+    flex: 1;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 25px; }
+    footer div:nth-child(3) {
+      width: 62px;
+      height: 62px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+      background-color: #53b201;
+      align-items: center;
+      border-radius: 50%;
+      flex: none;
+      padding: 0;
+      margin-bottom: 25px; }
 
 .profileHeader {
   display: flex;
@@ -131,7 +162,7 @@ header {
     padding: 0;
     margin-bottom: 0;
     justify-content: flex-start;
-    margin-bottom: 12px; }
+    margin-bottom: 30px; }
     .postCard header img {
       width: 35px;
       height: 35px;
@@ -143,13 +174,20 @@ header {
         font-size: 14px;
         font-weight: bold;
         line-height: 1;
-        color: #707070;
+        color: #53b201;
         margin: 0; }
       .postCard header .details time {
         font-family: Cairo;
         font-size: 9px;
         line-height: 1.89;
         color: #999999; }
+  .postCard h2 {
+    font-family: Cairo;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.92;
+    text-align: right;
+    color: #53b201; }
   .postCard p {
     font-family: Cairo;
     font-size: 12px;
@@ -204,30 +242,18 @@ header {
           content: url("../img/share-1.svg"); }
         .postCard ul.shareingStatus li:nth-child(3)::before {
           content: url("../img/speech-bubble-with-text-lines-1.svg"); }
+    .postCard ul.withImage img {
+      width: 100%;
+      height: auto; }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: url(../img/footer.svg) no-repeat center;
-  background-size: 107%;
-  display: flex;
-  align-items: flex-end; }
-  footer div {
-    flex: 1;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 25px; }
-    footer div:nth-child(3) {
-      width: 62px;
-      height: 62px;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
-      background-color: #53b201;
-      align-items: center;
-      border-radius: 50%;
-      flex: none;
-      padding: 0;
-      margin-bottom: 25px; }
+.title {
+  font-family: Cairo;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.86;
+  text-align: right;
+  color: #53b201;
+  margin: 0 15px 0; }
+
+hr {
+  margin: 30px 0 15px 0; }
