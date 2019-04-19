@@ -1,4 +1,4 @@
-angular.module('JozoorApp').controller('ViewProfileController', function($rootScope, $scope, $http, $timeout,$state) {
+angular.module('JozoorApp').controller('ViewExtrnalProfileController', function($rootScope, $scope, $http, $timeout,$state) {
     $scope.$on('$viewContentLoaded', function() {   
         // initialize core components
         App.initAjax();
