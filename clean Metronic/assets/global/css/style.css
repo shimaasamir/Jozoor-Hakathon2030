@@ -506,6 +506,10 @@ form .loginButton {
     color: #53b201;
 }
 
+.categories li div img {
+    fill: #53b201;
+    stroke: #53b201;
+}
 .categories li.active div {
     background-color: #53b201;
 }
