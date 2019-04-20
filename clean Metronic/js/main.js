@@ -139,7 +139,7 @@ JozoorApp.config([
   "$urlRouterProvider",
   function($stateProvider, $urlRouterProvider) {
     // Redirect any unmatched url
-    $urlRouterProvider.otherwise("/splash.html");
+    $urlRouterProvider.otherwise("/newsFeed.html");
 
     $stateProvider
 
@@ -203,25 +203,25 @@ JozoorApp.config([
         }
       })
 
-      // Splash
-      .state("splash", {
-        url: "/splash.html",
-        templateUrl: "views/splash.html",
-        data: { pageTitle: "Splash Template" },
-        controller: "SplashController",
-        resolve: {
-          deps: [
-            "$ocLazyLoad",
-            function($ocLazyLoad) {
-              return $ocLazyLoad.load({
-                name: "JozoorApp",
-                insertBefore: "#ng_load_plugins_before", // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
-                files: ["js/controllers/SplashController.js"]
-              });
-            }
-          ]
-        }
-      })
+      // // Splash
+      // .state("splash", {
+      //   url: "/splash.html",
+      //   templateUrl: "views/splash.html",
+      //   data: { pageTitle: "Splash Template" },
+      //   controller: "SplashController",
+      //   resolve: {
+      //     deps: [
+      //       "$ocLazyLoad",
+      //       function($ocLazyLoad) {
+      //         return $ocLazyLoad.load({
+      //           name: "JozoorApp",
+      //           insertBefore: "#ng_load_plugins_before", // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+      //           files: ["js/controllers/SplashController.js"]
+      //         });
+      //       }
+      //     ]
+      //   }
+      // })
       .state("login", {
         url: "/login.html",
         templateUrl: "views/login.html",
