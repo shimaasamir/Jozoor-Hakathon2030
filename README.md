@@ -47,4 +47,3 @@
 * Organize on-ground activities to increase the farmers awareness of how to make the most of their resources.
 * Launch RND campaigns.
 * Cooperate with government we will build a program that enable housewives around scholes to prepare meals for school children while providing them with needed corps.
-
