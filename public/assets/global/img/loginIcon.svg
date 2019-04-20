@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23.29" height="14.981" viewBox="0 0 23.29 14.981">
+  <defs>
+    <filter id="Path_74" x="-30" y="-20" width="83.29" height="74.981" filterUnits="userSpaceOnUse">
+      <feOffset dy="10" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feFlood flood-opacity="0.051"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Path_74)">
+        <path id="Path_74-2" data-name="Path 74" d="M11.822,20.68a1.019,1.019,0,0,0,.7.3,1,1,0,0,0,.7-1.7L8.443,14.493H27.287a1,1,0,1,0,0-2.006H8.443L13.259,7.7a.969.969,0,0,0,0-1.4,1.009,1.009,0,0,0-1.437,0L5.3,12.788a.969.969,0,0,0,0,1.4Z" transform="translate(-5 -5)" fill="#fff"/>
+      </g>
+    </clipPath>
+    <filter id="Rectangle_326" x="-40.671" y="-22.671" width="95.633" height="80.323" filterUnits="userSpaceOnUse">
+      <feOffset dy="10" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-2"/>
+      <feFlood flood-opacity="0.051"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_106" data-name="Group 106" transform="translate(27.29 17.843) rotate(180)">
+    <g id="Group_105" data-name="Group 105" transform="translate(4 1.862)" clip-path="url(#clip-path)">
+      <g transform="matrix(-1, 0, 0, -1, 23.29, 15.98)" filter="url(#Rectangle_326)">
+        <rect id="Rectangle_326-2" data-name="Rectangle 326" width="35.633" height="20.323" rx="6" transform="translate(24.96 17.65) rotate(180)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>
