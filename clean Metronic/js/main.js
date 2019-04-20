@@ -128,8 +128,8 @@ JozoorApp.controller("ThemePanelController", [
 
 /* Setup Layout Part - Footer */
 JozoorApp.controller("FooterController", [
-  "$scope",
-  function($scope) {
+  "$scope","$state",
+  function($scope,$state) {
     $scope.$on("$includeContentLoaded", function() {
     });
   }
@@ -167,7 +167,7 @@ JozoorApp.config([
         }
       })
 
-      // ViewProfile
+      // ViewExtrnalProfile
       .state("viewExtrnalProfile", {
         url: "/viewExtrnalProfile.html",
         templateUrl: "views/viewExtrnalProfile.html",
@@ -182,6 +182,28 @@ JozoorApp.config([
                 insertBefore: "#ng_load_plugins_before", // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
                 files: [
                   "js/controllers/ViewExtrnalProfileController.js"
+                ]
+              });
+            }
+          ]
+        }
+      })
+
+      // News Feed
+      .state("newsFeed", {
+        url: "/newsFeed.html",
+        templateUrl: "views/newsFeed.html",
+        data: { pageTitle: "News Feed Template" },
+        controller: "NewsFeedController",
+        resolve: {
+          deps: [
+            "$ocLazyLoad",
+            function($ocLazyLoad) {
+              return $ocLazyLoad.load({
+                name: "JozoorApp",
+                insertBefore: "#ng_load_plugins_before", // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                files: [
+                  "js/controllers/NewsFeedController.js"
                 ]
               });
             }
