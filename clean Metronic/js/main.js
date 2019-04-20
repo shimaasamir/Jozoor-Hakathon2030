@@ -240,6 +240,24 @@ JozoorApp.config([
           ]
         }
       })
+      .state("products", {
+        url: "/products.html",
+        templateUrl: "views/products.html",
+        data: { pageTitle: "Products Template" },
+        controller: "ProductsController",
+        resolve: {
+          deps: [
+            "$ocLazyLoad",
+            function($ocLazyLoad) {
+              return $ocLazyLoad.load({
+                name: "JozoorApp",
+                insertBefore: "#ng_load_plugins_before", // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                files: ["js/controllers/ProductsController.js"]
+              });
+            }
+          ]
+        }
+      })
 
       // Blank Page
       .state("blank", {

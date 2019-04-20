@@ -35,7 +35,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 <body ng-controller="AppController"
     class=""
-    ng-class="{'profile': ($state.current.name === 'viewProfile' || $state.current.name === 'viewExtrnalProfile'), 'splash': $state.current.name === 'splash' , 'newsFeed': $state.current.name === 'newsFeed', 'login': $state.current.name === 'login' }">
+    ng-class="{'profile': ($state.current.name === 'viewProfile' || $state.current.name === 'viewExtrnalProfile'), 'splash': $state.current.name === 'splash' , 'newsFeed': ($state.current.name === 'newsFeed' || $state.current.name === 'products'), 'login': $state.current.name === 'login' }">
     <!-- END PAGE SPINNER -->
     <!-- BEGIN HEADER -->
     <div ng-hide = "$state.current.name == 'login' || $state.current.name == 'splash'" data-ng-include="'tpl/header.html'" data-ng-controller="HeaderController"
