@@ -1,5 +1,5 @@
-<footer>
-    <div>
+<footer ng-hide="$state.current.name === 'splash'">
+    <div ui-sref="newsFeed">
         <img src="../assets/global/img/blogging.svg" />
     </div>
     <div>
@@ -11,7 +11,7 @@
     <div>
         <img src="../assets/global/img/bell.svg" />
     </div>
-    <div>
+    <div ng-click="redirectToProfile()">
         <img src="../assets/global/img/multiple-users-silhouette-1.svg" />
     </div>
 </footer>

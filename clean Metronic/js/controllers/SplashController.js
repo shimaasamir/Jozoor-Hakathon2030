@@ -1,4 +1,4 @@
-angular.module('JozoorApp').controller('ViewExtrnalProfileController', function($rootScope, $scope, $http, $timeout,$state) {
+angular.module('JozoorApp').controller('SplashController', function($rootScope, $scope, $http, $timeout,$state) {
     $scope.$on('$viewContentLoaded', function() {   
         // initialize core components
     });
@@ -8,5 +8,7 @@ angular.module('JozoorApp').controller('ViewExtrnalProfileController', function(
     $rootScope.settings.layout.pageBodySolid = false;
     $rootScope.settings.layout.pageSidebarClosed = false;
 
-    
+    $timeout(function(){
+        $state.go('newsFeed');
+    },5000);
 });
