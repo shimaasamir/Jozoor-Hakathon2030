@@ -222,6 +222,24 @@ JozoorApp.config([
           ]
         }
       })
+      .state("login", {
+        url: "/login.html",
+        templateUrl: "views/login.html",
+        data: { pageTitle: "Login Template" },
+        controller: "LoginController",
+        resolve: {
+          deps: [
+            "$ocLazyLoad",
+            function($ocLazyLoad) {
+              return $ocLazyLoad.load({
+                name: "JozoorApp",
+                insertBefore: "#ng_load_plugins_before", // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                files: ["js/controllers/LoginController.js"]
+              });
+            }
+          ]
+        }
+      })
 
       // Blank Page
       .state("blank", {
