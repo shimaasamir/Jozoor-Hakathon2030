@@ -11,7 +11,7 @@ for iOS: https://itunes.apple.com/us/app/expo-client/id982107779?mt=8
 4) then select run on android/emulator or run iOS simulator
 
 #using yarn run commands
-1) npm install 
+1) yarn install 
 2) expo start 
 3) the browser will run expo on localhost
 4) then select run on android/emulator or run iOS simulator
