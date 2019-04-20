@@ -34,8 +34,8 @@ License: You must have a valid license purchased only from themeforest(the above
 </head>
 
 <body ng-controller="AppController"
-    class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-sidebar-closed-hide-logo page-on-load"
-    ng-class="{'profile': $state.current != splash }">
+    class=""
+    ng-class="{'profile': ($state.current.name === 'viewProfile' || $state.current.name === 'viewExtrnalProfile'), 'splash': $state.current.name === 'splash' }">
     <!-- END PAGE SPINNER -->
     <!-- BEGIN HEADER -->
     <div data-ng-include="'tpl/header.html'" data-ng-controller="HeaderController"

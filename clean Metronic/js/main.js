@@ -79,8 +79,7 @@ initialization can be disabled and Layout.init() should be called on page load c
 JozoorApp.controller("HeaderController", [
   "$scope",
   function($scope) {
-    $scope.$on("$includeContentLoaded", function() {
-    });
+    $scope.$on("$includeContentLoaded", function() {});
   }
 ]);
 
@@ -89,8 +88,7 @@ JozoorApp.controller("SidebarController", [
   "$state",
   "$scope",
   function($state, $scope) {
-    $scope.$on("$includeContentLoaded", function() {
-    });
+    $scope.$on("$includeContentLoaded", function() {});
   }
 ]);
 
@@ -128,10 +126,10 @@ JozoorApp.controller("ThemePanelController", [
 
 /* Setup Layout Part - Footer */
 JozoorApp.controller("FooterController", [
-  "$scope","$state",
-  function($scope,$state) {
-    $scope.$on("$includeContentLoaded", function() {
-    });
+  "$scope",
+  "$state",
+  function($scope, $state) {
+    $scope.$on("$includeContentLoaded", function() {});
   }
 ]);
 
@@ -141,7 +139,7 @@ JozoorApp.config([
   "$urlRouterProvider",
   function($stateProvider, $urlRouterProvider) {
     // Redirect any unmatched url
-    $urlRouterProvider.otherwise("/viewProfile.html");
+    $urlRouterProvider.otherwise("/splash.html");
 
     $stateProvider
 
@@ -158,9 +156,7 @@ JozoorApp.config([
               return $ocLazyLoad.load({
                 name: "JozoorApp",
                 insertBefore: "#ng_load_plugins_before", // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
-                files: [
-                  "js/controllers/ViewProfileController.js"
-                ]
+                files: ["js/controllers/ViewProfileController.js"]
               });
             }
           ]
@@ -180,9 +176,7 @@ JozoorApp.config([
               return $ocLazyLoad.load({
                 name: "JozoorApp",
                 insertBefore: "#ng_load_plugins_before", // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
-                files: [
-                  "js/controllers/ViewExtrnalProfileController.js"
-                ]
+                files: ["js/controllers/ViewExtrnalProfileController.js"]
               });
             }
           ]
@@ -202,9 +196,27 @@ JozoorApp.config([
               return $ocLazyLoad.load({
                 name: "JozoorApp",
                 insertBefore: "#ng_load_plugins_before", // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
-                files: [
-                  "js/controllers/NewsFeedController.js"
-                ]
+                files: ["js/controllers/NewsFeedController.js"]
+              });
+            }
+          ]
+        }
+      })
+
+      // Splash
+      .state("splash", {
+        url: "/splash.html",
+        templateUrl: "views/splash.html",
+        data: { pageTitle: "Splash Template" },
+        controller: "SplashController",
+        resolve: {
+          deps: [
+            "$ocLazyLoad",
+            function($ocLazyLoad) {
+              return $ocLazyLoad.load({
+                name: "JozoorApp",
+                insertBefore: "#ng_load_plugins_before", // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                files: ["js/controllers/SplashController.js"]
               });
             }
           ]
